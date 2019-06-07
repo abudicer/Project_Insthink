@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Materialize Theme</title>
+</head>
+
+<body>
+
+<!-- Section Replies -->
+
+
+<section class="section section-user grey lighten-4">
+<div class="container">
+  <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title teal white-text">Replies</span>
+              <table class="striped">
+                <tbody>
+                  <tr>
+                    <td width="90">
+                        <img src="image/person4.jpg" alt="" class="responsive-img circle" style="width: 60px; margin-left: 10px;">
+                    </td>
+                    <td> <span class="name grey-text">Mark Bhenjson Dimasupil</span> 
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat nostrum pariatur earum ut accusamus nisi voluptatem. Animi velit molestiae rem cum pariatur deserunt numquam odio, obcaecati fugiat sit voluptatum suscipit.
+                        </p>
+                    </td>
+                    <td>
+                  
+                      <a href="" class="grey-text">
+                                <i class="material-icons"></i>
+                            </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="70">
+                    </td>
+                    <td> 15m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;like &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reply   <i class="material-icons right red-text">like</i>
+                    </td>
+                  <tr>
+                    <td width="90" class="white">
+                        <img src="image/G.jpg" alt="" class="responsive-img circle" style="width: 40px; margin-left: 30px;">
+                    </td>
+                    <td><span class="name grey-text">Grace Dela Tore</span> 
+                        <p>Mark Bhenjson bakit Lorem ipsum din yung pinost mo? Gaya gaya ka talaga. Hahaha. Ibahin mo naman. After mo gawin si Login madami pa ako ipapagawa sayo. Paconnect na din ako sa wifi.</p>
+                    </td>
+                    <td>
+                      <a href="" class="grey-text">
+                                <i class="material-icons"></i>
+                            </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="10">
+                    </td>
+                  <td> 15m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;like &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reply   <i class="material-icons right red-text">like</i>
+                  </td>
+                  <tr>
+                    <td width="90" class="white">
+                        <img src="image/person3.jpg" alt="" class="responsive-img circle" style="width: 40px; margin-left: 30px;">
+                    </td>
+                    <td> <span class="name grey-text">Karla Daquioag</span>
+                        <p>Sakin din Lorem ipsum din nilagay ko. Sensya na. Sungit naman ni Grace. Hahaha.</p>
+                    </td>
+                    <td>
+                      <a href="" class="grey-text">
+                          <i class="material-icons"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="70">
+                    </td>
+                    <td> 10m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;like &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reply   
+                      <i class="material-icons right red-text">like</i>
+                    </td>
+                  <tr>
+                    <td width="90" class="white">
+                        <img src="image/person2.jpg" alt="" class="responsive-img circle" style="width: 40px; margin-left: 30px;">
+                    </td>
+                    <td>
+                    <span class="name grey-text">Jay Lawrence Alegria</span>
+                    <p>Wag na kayo mag away. Grace manlibre ka naman.</p>
+                    </td>
+                    <td>
+                      <a href="" class="grey-text">
+                                <i class="material-icons"></i>
+                            </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="70">
+                    </td>
+                    <td> 2m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;like &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reply   <i class="material-icons right red-text">like</i>
+                    </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+         </div> 
+      </div>
+    </div>
+  </div>
+    </section>
+    
+
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  
+  <script> 
+
+    $('.section').hide();
+
+
+
+    setTimeout(function(){
+      $(document).ready(function () {
+
+      //Init Side nav
+      $('.button-collapse').sideNav();
+
+      // Init Modal
+      $('.modal').modal();
+      $('select').material_select();
+
+      // Hide section
+      $('.section').fadeIn();
+
+      // Hide preloader
+      $('.loader').fadeOut();
+
+      // Counter
+      $('.count').each(function(){
+        $(this).prop('Counter', 0).animate({
+          Counter: $(this).text()
+        },{
+          duration: 3000,
+          easing: 'swing',
+          step: function(now){
+            $(this).text(Math.ceil(now));
+        }
+        });
+      });
+    });
+// Comments - Approve & Deny
+$('.approve').click(function(e){
+  Materialize.toast('Comment Approve', 3000);
+  e.preventDefault();
+});
+$('.deny').click(function(e){
+  Materialize.toast('Comment Denied', 3000);
+  e.preventDefault();
+});
+
+// Quick Todos
+$('#todo-form').submit(function(e){
+  // console.log($('#todo').val());
+
+  const output =` <li class="collection-item">
+              <div> ${$('#todo').val()}
+                <a href="#!" class="secondary-content delete">
+                  <i class="material-icons">close</i>
+                </a>
+              </div>
+            </li>`;
+  
+            $('.todos').append(output);
+            Materialize.toast('Todo Added', 3000, 'rounded');
+          e.preventDefault();
+        });
+// Delete Todos
+          $('.todos').on('click', '.delete', function(e){
+           $(this).parent().parent().remove();
+           Materialize.toast('Todo Deleted', 3000, 'rounded');
+          e.preventDefault();
+        });
+        CKEDITOR.replace('body');
+
+      }, 1000);
+    
+  </script>
+</body>
+
+</html>
+
